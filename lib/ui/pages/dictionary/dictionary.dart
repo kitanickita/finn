@@ -21,7 +21,7 @@ class _DictionaryState extends State<Dictionary> {
     final double blockSizeHorizontal = SizeConfig.blockSizeHorizontal;
 
     return Scaffold(
-      resizeToAvoidBottomPadding: true,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         centerTitle: true,
         title: logo,

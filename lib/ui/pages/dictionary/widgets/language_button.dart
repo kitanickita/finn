@@ -20,12 +20,14 @@ class LanguageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      elevation: language == buttonLanguage ? 0 : 8,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      padding: const EdgeInsets.symmetric(vertical: 15),
-      color: Theme.of(context).primaryColor,
-      onPressed: () => onTap(),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        elevation: language == buttonLanguage ? 0 : 8,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+        primary: Theme.of(context).primaryColor,
+      ),
+      onPressed: onTap,
       child: Row(
         children: [
           Text(label, style: TextStyle(color: fromColor)),

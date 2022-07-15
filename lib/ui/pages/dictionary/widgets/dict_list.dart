@@ -31,8 +31,8 @@ class DictList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer(
-      builder: (context, watch, child) {
-        final state = watch(dictProvider.state);
+      builder: (context, ref, child) {
+        final state = ref.watch(dictProvider);
 
         return Expanded(
           child: Container(

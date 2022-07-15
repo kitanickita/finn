@@ -2,7 +2,7 @@ import 'package:finn/models/language_models/language.dart';
 import 'package:finn/models/language_models/languages.dart';
 import 'package:finn/models/providers/dict/dict_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/all.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:finn/localization/app_localization.dart';
 
 class LanguageDropdownMenu extends StatefulWidget {
@@ -24,8 +24,8 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
   @override
   Widget build(BuildContext context) {
     return Consumer(
-      builder: (context, watch, child) {
-        final state = watch(dictProvider.state);
+      builder: (context, ref, child) {
+        final state = ref.read(dictProvider);
         return DropdownButton(
           hint: Text(
               "${languages[state.translation].flag} ${context.localize(languages[state.translation]?.language)}"),
@@ -40,7 +40,7 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
             ),
           ],
           onChanged: (value) {
-            context.read(dictProvider).translationSearchUpdate(value);
+            ref.read(dictProvider.notifier).translationSearchUpdate(value);
           },
         );
       },

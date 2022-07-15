@@ -3,7 +3,7 @@ import 'package:finn/ui/pages/dictionary/dictionary.dart';
 import 'package:finn/ui/common/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_riverpod/all.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/all.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:finn/localization/app_localization.dart';
 import 'package:finn/models/providers/dict/dict_provider.dart';
 import 'package:finn/ui/common/themes/light_theme.dart';
@@ -20,8 +19,8 @@ class _SearchFieldState extends State<SearchField> {
   @override
   Widget build(BuildContext context) {
     return Consumer(
-      builder: (context, watch, child) {
-        final state = watch(dictProvider.state);
+      builder: (context, ref, child) {
+        final state = ref.watch(dictProvider);
         controller = TextEditingController(text: state.search);
         controller.selection = TextSelection.fromPosition(
           TextPosition(offset: controller.text.length),
@@ -35,7 +34,7 @@ class _SearchFieldState extends State<SearchField> {
             decoration: InputDecoration(
               suffixIcon: IconButton(
                 onPressed: () {
-                  context.read(dictProvider).resetSearchField();
+                  ref.read(dictProvider.notifier).resetSearchField();
                 },
                 icon: Icon(
                   Icons.cancel,
@@ -61,7 +60,7 @@ class _SearchFieldState extends State<SearchField> {
               ),
             ),
             onChanged: (value) =>
-                context.read(dictProvider).searchDictForWords(value),
+                ref.read(dictProvider.notifier).searchDictForWords(value),
           ),
         );
       },

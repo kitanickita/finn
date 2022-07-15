@@ -16,8 +16,8 @@ class LanguageButtonsRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer(
-      builder: (context, watch, child) {
-        final state = watch(dictProvider.state);
+      builder: (context, ref, child) {
+        final state = ref.watch(dictProvider);
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 80.0, vertical: 25),
           child: Row(
@@ -28,10 +28,10 @@ class LanguageButtonsRow extends StatelessWidget {
                 fromColor: kBlue,
                 toColor: kOrange,
                 onTap: () {
-                  context
-                      .read(dictProvider)
+                  ref
+                      .read(dictProvider.notifier)
                       .languageSearchUpdate(Languages.finnish);
-                  context.read(dictProvider).resetSearchField();
+                  ref.read(dictProvider.notifier).resetSearchField();
                 },
                 language: state.language,
                 buttonLanguage: Languages.finnish,
@@ -42,10 +42,10 @@ class LanguageButtonsRow extends StatelessWidget {
                 fromColor: kOrange,
                 toColor: kBlue,
                 onTap: () {
-                  context
-                      .read(dictProvider)
+                  ref
+                      .read(dictProvider.notifier)
                       .languageSearchUpdate(Languages.english);
-                  context.read(dictProvider).resetSearchField();
+                  ref.read(dictProvider.notifier).resetSearchField();
                 },
                 language: state.language,
                 buttonLanguage: Languages.english,

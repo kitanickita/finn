@@ -1,5 +1,4 @@
-import 'package:flutter_riverpod/all.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:finn/models/dict_repository/dict_repository.dart';
 import 'package:finn/models/language_models/language.dart';
 import 'package:finn/models/language_models/languages.dart';
@@ -11,7 +10,8 @@ final dictRepository = Provider.autoDispose<DictRepository>((ref) {
   return DictRepository();
 });
 // Dictionary provider
-final dictProvider = StateNotifierProvider.autoDispose<DictNotifier>((ref) {
+final dictProvider =
+    StateNotifierProvider.autoDispose<DictNotifier, DictState>((ref) {
   return DictNotifier(ref);
 });
 

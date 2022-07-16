@@ -6,16 +6,24 @@ import 'package:finn/models/word_models/word_model.dart';
 import 'package:finn/ui/common/size_config.dart';
 import 'package:finn/ui/common/themes/light_theme.dart';
 
-class WordInfo extends StatelessWidget {
-  final Word word;
+// screenWidth = _mediaQueryData.size.width;
+//     screenHeight = _mediaQueryData.size.height;
+//     blockSizeHorizontal = screenWidth / 100;
+//     blockSizeVertical = screenHeight / 100;
 
-  const WordInfo({Key key, this.word}) : super(key: key);
+//     defaultSize = orientation == Orientation.landscape
+//         ? screenHeight * 0.024
+//         : screenWidth * 0.024;
+class WordInfo extends StatelessWidget {
+  final Word? word;
+
+  const WordInfo({Key? key, this.word}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
-    final double blockSizeVertical = SizeConfig.blockSizeVertical;
-    final double blockSizeHorizontal = SizeConfig.blockSizeHorizontal;
+    // SizeConfig().init(context);
+    final double blockSizeVertical = MediaQuery.of(context).size.height / 100;
+    final double blockSizeHorizontal = MediaQuery.of(context).size.width / 100;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -35,13 +43,13 @@ class WordInfo extends StatelessWidget {
                   SizedBox(
                     width: 190,
                     child: AutoSizeText(
-                      word.finnish,
+                      word?.finnish,
                       style: Theme.of(context).primaryTextTheme.headline5,
                       maxLines: 2,
                     ),
                   ),
                   Text(
-                    "KP: ${word.chapter}",
+                    "KP: ${word?.chapter}",
                     style: Theme.of(context).primaryTextTheme.headline5,
                   ),
                 ],

@@ -6,16 +6,16 @@ class LanguageButton extends StatelessWidget {
 
   final Color fromColor;
   final Color toColor;
-  final Function onTap;
+  final VoidCallback onTap;
   final Languages language;
   final Languages buttonLanguage;
   const LanguageButton({
-    this.label,
-    this.fromColor,
-    this.toColor,
-    this.onTap,
-    this.language,
-    this.buttonLanguage,
+    required this.label,
+    required this.fromColor,
+    required this.toColor,
+    required this.onTap,
+    required this.language,
+    required this.buttonLanguage,
   });
 
   @override

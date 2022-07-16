@@ -7,7 +7,7 @@ import 'package:finn/localization/app_localization.dart';
 
 class LanguageDropdownMenu extends StatefulWidget {
   const LanguageDropdownMenu({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -26,16 +26,16 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
     return Consumer(
       builder: (context, ref, child) {
         final state = ref.read(dictProvider);
-        return DropdownButton(
+        return DropdownButton<Languages>(
           hint: Text(
-              "${languages[state.translation].flag} ${context.localize(languages[state.translation]?.language)}"),
+              "${_getFlag(state.translation)} ${context.localize(_getLanguage(state.translation))}"),
           items: [
             ...List.generate(
               languagePicker.length,
               (index) => DropdownMenuItem(
                 value: languagePicker[index],
                 child: Text(
-                    "${languages[languagePicker[index]].flag} ${context.localize(languages[languagePicker[index]]?.language)}"),
+                    "${_getFlag(state.translation)} ${context.localize(_getLanguage(languagePicker[index]))}"),
               ),
             ),
           ],
@@ -45,5 +45,13 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
         );
       },
     );
+  }
+
+  String _getFlag(Languages translation) {
+    return languages[translation]?.flag ?? '';
+  }
+
+  String _getLanguage(Languages translation) {
+    return languages[translation]?.language ?? '';
   }
 }

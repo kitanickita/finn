@@ -4,13 +4,13 @@ extension LocalizationExt on BuildContext {
   String localize(String value) {
 // Getting the device's locale, which can be for example
 // "en", "it", "es" or anything else
-    final code = AppLocalization.of(this).locale.languageCode ?? "en";
+    final code = AppLocalization.of(this)?.locale.languageCode ?? "en";
     final database = AppLocalization._db;
 // Checks whether the current app locale is supported
     if (database.containsKey(code)) {
-      return database[code][value] ?? "-";
+      return database[code]?[value] ?? "-";
     } else {
-      return database["en"][value] ?? "-";
+      return database["en"]?[value] ?? "-";
     }
   }
 }
@@ -18,7 +18,7 @@ extension LocalizationExt on BuildContext {
 class AppLocalization {
   final Locale locale;
   const AppLocalization(this.locale);
-  static AppLocalization of(BuildContext ctx) =>
+  static AppLocalization? of(BuildContext ctx) =>
       Localizations.of<AppLocalization>(ctx, AppLocalization);
 
   static final Map<String, Map<String, String>> _db = {

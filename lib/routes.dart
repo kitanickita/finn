@@ -16,7 +16,7 @@ class RouteGenerator {
         );
       case wordInfo:
         return MaterialPageRoute(
-          builder: (context) => const WordInfo(),
+          builder: (context) => WordInfo(),
         );
       default:
         throw const FormatException("Route not fount");

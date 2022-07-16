@@ -7,7 +7,11 @@ class Language extends Equatable {
   final String shortName;
   final String flag;
 
-  const Language({this.language, this.shortName, this.flag});
+  const Language({
+    required this.language,
+    required this.shortName,
+    required this.flag,
+  });
 
   @override
   String toString() {

@@ -6,30 +6,24 @@ import 'package:finn/models/language_models/languages.dart';
 import 'package:finn/models/providers/dict/dict_provider.dart';
 import 'package:finn/ui/common/size_config.dart';
 import 'package:finn/ui/common/themes/light_theme.dart';
+import 'package:substring_highlight/substring_highlight.dart';
 
 import '../../../common/widgets/highlight_text.dart';
 
 class DictList extends StatelessWidget {
   const DictList({
-    Key key,
-    @required this.blockSizeVertical,
-    @required this.blockSizeHorizontal,
+    Key? key,
+    required this.blockSizeVertical,
+    required this.blockSizeHorizontal,
   }) : super(key: key);
 
   final double blockSizeVertical;
   final double blockSizeHorizontal;
 
-  // void _goToWordInfo({@required BuildContext context, @required Word word}) =>
-  //     Navigator.of(context).push(
-  //       MaterialPageRoute(
-  //         builder: (_) => WordInfo(
-  //           word: word,
-  //         ),
-  //       ),
-  //     );
-
   @override
   Widget build(BuildContext context) {
+    final double blockSizeVertical = MediaQuery.of(context).size.height / 100;
+    final double blockSizeHorizontal = MediaQuery.of(context).size.width / 100;
     return Consumer(
       builder: (context, ref, child) {
         final state = ref.watch(dictProvider);
@@ -47,7 +41,7 @@ class DictList extends StatelessWidget {
                       final word = state.words[index];
                       return Padding(
                         padding: EdgeInsets.symmetric(
-                            vertical: SizeConfig.blockSizeVertical / 3.5),
+                            vertical: blockSizeVertical / 3.5),
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5),
@@ -57,7 +51,7 @@ class DictList extends StatelessWidget {
                             children: [
                               Padding(
                                 padding: EdgeInsets.only(
-                                    bottom: SizeConfig.blockSizeVertical / 2.5),
+                                    bottom: blockSizeVertical / 2.5),
                                 child: GestureDetector(
                                   // onTap: () => _goToWordInfo(
                                   //     context: context, word: word),
@@ -74,13 +68,9 @@ class DictList extends StatelessWidget {
                                               left: blockSizeHorizontal * 3),
                                           child: state.language ==
                                                   Languages.finnish
-                                              ? HighlightText(
+                                              ? SubstringHighlight(
                                                   text: word.finnish,
-                                                  highlight: state.search,
-                                                  highlightColor: kRed,
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .bodyText1,
+                                                  term: state.search,
                                                 )
                                               : AutoSizeText(
                                                   word.finnish,
@@ -105,13 +95,9 @@ class DictList extends StatelessWidget {
                                               left: blockSizeHorizontal * 3),
                                           child: state.language !=
                                                   Languages.finnish
-                                              ? HighlightText(
+                                              ? SubstringHighlight(
                                                   text: word.translation,
-                                                  highlight: state.search,
-                                                  highlightColor: kRed,
-                                                  style: Theme.of(context)
-                                                      .primaryTextTheme
-                                                      .bodyText1,
+                                                  term: state.search,
                                                 )
                                               : AutoSizeText(
                                                   word.translation,

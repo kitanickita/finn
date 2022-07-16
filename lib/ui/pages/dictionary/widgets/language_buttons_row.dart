@@ -10,7 +10,7 @@ import 'package:finn/ui/pages/dictionary/widgets/language_button.dart';
 
 class LanguageButtonsRow extends StatelessWidget {
   const LanguageButtonsRow({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -38,7 +38,7 @@ class LanguageButtonsRow extends StatelessWidget {
               ),
               LanguageButton(
                 label:
-                    '${languages[state.translation]?.flag}  ${context.localize(languages[state.translation]?.shortName)}',
+                    '${languages[state.translation]?.flag ?? ''}  ${context.localize(languages[state.translation]?.shortName ?? '')}',
                 fromColor: kOrange,
                 toColor: kBlue,
                 onTap: () {

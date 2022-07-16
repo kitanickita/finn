@@ -8,17 +8,17 @@ class DictState {
   final Languages translation;
   final String search;
   DictState({
-    this.words,
+    this.words = const [],
     this.language = Languages.finnish,
     this.translation = Languages.english,
-    this.search,
+    this.search = '',
   });
 
   DictState copyWith({
-    List<Word> words,
-    Languages language,
-    Languages translation,
-    String search,
+    List<Word>? words,
+    Languages? language,
+    Languages? translation,
+    String? search,
   }) {
     return DictState(
       words: words ?? this.words,

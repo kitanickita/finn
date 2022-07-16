@@ -33,7 +33,7 @@ class DictRepository {
   }
 
   Future<List<Word>> findInlanguage(
-      {String search, String language, String translation}) async {
+      String search, String language, String translation) async {
     // print("from repo translation:  ${translation} \n language:  ${language}");
     final db = await init();
     final List<Map> data = await db

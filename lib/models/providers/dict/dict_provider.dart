@@ -18,7 +18,7 @@ final dictProvider =
 class DictNotifier extends StateNotifier<DictState> {
   final DictRepository _repository;
 
-  DictNotifier(ProviderReference ref)
+  DictNotifier(Ref ref)
       : _repository = ref.read(dictRepository),
         super(DictState());
 
@@ -35,15 +35,15 @@ class DictNotifier extends StateNotifier<DictState> {
       // this if operator disides whethere button chosen finnish or other language
       if (state.language == Languages.finnish) {
         final List<Word> wordList = await _repository.findInlanguage(
-            search: search,
-            language: languages[state.language].language,
-            translation: languages[state.translation].language);
+            search,
+            languages[state.language]?.language ?? '',
+            languages[state.translation]?.language ?? '');
         state = state.copyWith(words: wordList);
       } else {
         final List<Word> wordList = await _repository.findInlanguage(
-            search: search,
-            language: languages[state.translation].language,
-            translation: languages[state.translation].language);
+            search,
+            languages[state.translation]?.language ?? '',
+            languages[state.translation]?.language ?? '');
         state = state.copyWith(words: wordList);
       }
     } catch (e) {
@@ -55,8 +55,8 @@ class DictNotifier extends StateNotifier<DictState> {
     state = state.copyWith(language: language);
   }
 
-  Future<void> translationSearchUpdate(Languages language) async {
-    state = state.copyWith(translation: language, search: state.search ?? '');
+  Future<void> translationSearchUpdate(Languages? language) async {
+    state = state.copyWith(translation: language, search: state.search);
     searchDictForWords(state.search);
   }
 }

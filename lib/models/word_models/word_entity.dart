@@ -8,12 +8,12 @@ class WordEntity extends Equatable {
   final String russian;
   final int chapter;
   const WordEntity({
-    this.id,
-    this.finnish,
-    this.translation,
-    this.english,
-    this.russian,
-    this.chapter,
+    required this.id,
+    required this.finnish,
+    required this.translation,
+    required this.english,
+    required this.russian,
+    required this.chapter,
   });
 
   @override
@@ -41,7 +41,7 @@ class WordEntity extends Equatable {
     };
   }
 
-  factory WordEntity.fromDb(Map<String, dynamic> data, String translation) {
+  factory WordEntity.fromDb(Map<dynamic, dynamic> data, String translation) {
     return WordEntity(
       id: data['id'] ?? '',
       finnish: data['finnish'] ?? '',

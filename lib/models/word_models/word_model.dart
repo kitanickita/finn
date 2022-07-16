@@ -1,16 +1,16 @@
 import 'package:finn/models/word_models/word_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'word.freezed.dart';
+part 'word_model.freezed.dart';
 
 @freezed
 abstract class Word with _$Word {
   const factory Word({
-    int id,
-    String finnish,
-    String translation,
-    String english,
-    String russian,
-    int chapter,
+    required int id,
+    required String finnish,
+    required String translation,
+    required String english,
+    required String russian,
+    required int chapter,
   }) = _Word;
 
   factory Word.fromEntity(WordEntity entity) {

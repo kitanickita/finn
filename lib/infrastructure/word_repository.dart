@@ -1,15 +1,16 @@
 import 'dart:io';
 
-import 'package:finn/models/word_models/word_model.dart';
-import 'package:finn/models/word_models/word_entity.dart';
+import 'package:finn/domain/i_word_repository.dart';
+import 'package:finn/domain/models/word_unit.dart';
+import 'package:finn/infrastructure/dtos/word_unit_dto.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-class DictRepository {
+class WordRepository implements IWordRepository {
   static const String dbName = 'dict.db';
 
-  Future<Database> init() async {
+  Future<Database> _init() async {
     final dbPath = await getDatabasesPath();
     final path = join(dbPath, dbName);
 
@@ -32,15 +33,16 @@ class DictRepository {
     );
   }
 
-  Future<List<Word>> findInlanguage(
+  Future<List<WordUnit>> findInlanguage(
       String search, String language, String translation) async {
     // print("from repo translation:  ${translation} \n language:  ${language}");
-    final db = await init();
+    final db = await _init();
     final List<Map> data = await db
         .rawQuery("SELECT * FROM data WHERE $language LIKE '%$search%'");
 
-    final List<Word> words = data.map((word) {
-      return Word.fromEntity(WordEntity.fromDb(word, translation));
+    final words = data.map((word) {
+      return WordUnitDTO.fromDb(word as Map<String, dynamic>, translation)
+          .toDomain();
     }).toList();
 
     return words;

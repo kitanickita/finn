@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:finn/localization/app_localization.dart';
-import 'package:finn/models/language_models/language.dart';
-import 'package:finn/models/language_models/languages.dart';
-import 'package:finn/models/providers/dict/dict_provider.dart';
-import 'package:finn/ui/common/themes/light_theme.dart';
-import 'package:finn/ui/pages/dictionary/widgets/language_button.dart';
+import 'package:finn/domain/models/language.dart';
+import 'package:finn/domain/models/languages.dart';
+import 'package:finn/application/dict_provider.dart';
+import 'package:finn/presentation/common/themes/light_theme.dart';
+import 'package:finn/presentation/pages/dictionary/widgets/language_button.dart';
+
+import '../../../../shared/providers.dart';
 
 class LanguageButtonsRow extends StatelessWidget {
   const LanguageButtonsRow({
@@ -38,7 +40,7 @@ class LanguageButtonsRow extends StatelessWidget {
               ),
               LanguageButton(
                 label:
-                    '${languages[state.translation]?.flag ?? ''}  ${context.localize(languages[state.translation]?.shortName ?? '')}',
+                    '${languages[state.translation]?.flag ?? ''} ${context.localize(languages[state.translation]?.shortName ?? '')}',
                 fromColor: kOrange,
                 toColor: kBlue,
                 onTap: () {

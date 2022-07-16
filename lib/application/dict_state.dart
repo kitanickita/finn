@@ -1,9 +1,9 @@
-import 'package:finn/models/language_models/languages.dart';
-import 'package:finn/models/word_models/word_model.dart';
+import 'package:finn/domain/models/word_unit.dart';
+import 'package:finn/domain/models/languages.dart';
 import 'package:flutter/foundation.dart';
 
 class DictState {
-  final List<Word> words;
+  final List<WordUnit> words;
   final Languages language;
   final Languages translation;
   final String search;
@@ -15,7 +15,7 @@ class DictState {
   });
 
   DictState copyWith({
-    List<Word>? words,
+    List<WordUnit>? words,
     Languages? language,
     Languages? translation,
     String? search,

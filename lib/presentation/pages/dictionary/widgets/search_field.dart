@@ -1,13 +1,13 @@
+import 'package:finn/localization/app_localization.dart';
+import 'package:finn/presentation/common/themes/light_theme.dart';
+import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:finn/localization/app_localization.dart';
-import 'package:finn/models/providers/dict/dict_provider.dart';
-import 'package:finn/ui/common/themes/light_theme.dart';
 
 class SearchField extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    TextEditingController controller = TextEditingController();
+    final TextEditingController controller = TextEditingController();
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 70,
@@ -17,6 +17,7 @@ class SearchField extends ConsumerWidget {
           suffixIcon: IconButton(
             onPressed: () {
               ref.read(dictProvider.notifier).resetSearchField();
+              controller.text = '';
             },
             icon: Icon(
               Icons.cancel,
@@ -45,6 +46,5 @@ class SearchField extends ConsumerWidget {
             ref.read(dictProvider.notifier).searchDictForWords(value),
       ),
     );
-    ;
   }
 }

@@ -2,12 +2,13 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:finn/models/language_models/languages.dart';
-import 'package:finn/models/providers/dict/dict_provider.dart';
-import 'package:finn/ui/common/size_config.dart';
-import 'package:finn/ui/common/themes/light_theme.dart';
+import 'package:finn/domain/models/languages.dart';
+import 'package:finn/application/dict_provider.dart';
+import 'package:finn/presentation/common/size_config.dart';
+import 'package:finn/presentation/common/themes/light_theme.dart';
 import 'package:substring_highlight/substring_highlight.dart';
 
+import '../../../../shared/providers.dart';
 import '../../../common/widgets/highlight_text.dart';
 
 class DictList extends StatelessWidget {

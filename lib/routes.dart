@@ -1,5 +1,5 @@
-import 'package:finn/ui/pages/dictionary/dictionary.dart';
-import 'package:finn/ui/pages/word_info/word_info.dart';
+import 'package:finn/presentation/pages/dictionary/dictionary.dart';
+import 'package:finn/presentation/pages/word_info/word_info.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {

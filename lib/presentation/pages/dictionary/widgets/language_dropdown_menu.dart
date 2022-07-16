@@ -1,9 +1,9 @@
-import 'package:finn/models/language_models/language.dart';
-import 'package:finn/models/language_models/languages.dart';
-import 'package:finn/models/providers/dict/dict_provider.dart';
+import 'package:finn/domain/models/language.dart';
+import 'package:finn/domain/models/languages.dart';
+import 'package:finn/localization/app_localization.dart';
+import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:finn/localization/app_localization.dart';
 
 class LanguageDropdownMenu extends StatefulWidget {
   const LanguageDropdownMenu({

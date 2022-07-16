@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:finn/ui/common/constants/icons.dart';
+import 'package:finn/domain/models/word_unit.dart';
+import 'package:finn/presentation/common/constants/icons.dart';
 import 'package:flutter/material.dart';
 
-import 'package:finn/models/word_models/word_model.dart';
-import 'package:finn/ui/common/size_config.dart';
-import 'package:finn/ui/common/themes/light_theme.dart';
+import 'package:finn/presentation/common/size_config.dart';
+import 'package:finn/presentation/common/themes/light_theme.dart';
 
 // screenWidth = _mediaQueryData.size.width;
 //     screenHeight = _mediaQueryData.size.height;
@@ -15,7 +15,7 @@ import 'package:finn/ui/common/themes/light_theme.dart';
 //         ? screenHeight * 0.024
 //         : screenWidth * 0.024;
 class WordInfo extends StatelessWidget {
-  final Word? word;
+  final WordUnit? word;
 
   const WordInfo({Key? key, this.word}) : super(key: key);
 

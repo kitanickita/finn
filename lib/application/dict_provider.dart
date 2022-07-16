@@ -1,26 +1,14 @@
+import 'package:finn/application/dict_state.dart';
+import 'package:finn/domain/i_word_repository.dart';
+import 'package:finn/domain/models/language.dart';
+import 'package:finn/domain/models/languages.dart';
+import 'package:finn/domain/models/word_unit.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:finn/models/dict_repository/dict_repository.dart';
-import 'package:finn/models/language_models/language.dart';
-import 'package:finn/models/language_models/languages.dart';
-import 'package:finn/models/providers/dict/dict_state.dart';
-import 'package:finn/models/word_models/word_model.dart';
-
-//  Create repository provider
-final dictRepository = Provider.autoDispose<DictRepository>((ref) {
-  return DictRepository();
-});
-// Dictionary provider
-final dictProvider =
-    StateNotifierProvider.autoDispose<DictNotifier, DictState>((ref) {
-  return DictNotifier(ref);
-});
 
 class DictNotifier extends StateNotifier<DictState> {
-  final DictRepository _repository;
+  final IWordRepository _repository;
 
-  DictNotifier(Ref ref)
-      : _repository = ref.read(dictRepository),
-        super(DictState());
+  DictNotifier(this._repository) : super(DictState());
 
   void resetSearchField() {
     final newState = state.copyWith(search: '');
@@ -34,13 +22,13 @@ class DictNotifier extends StateNotifier<DictState> {
     try {
       // this if operator disides whethere button chosen finnish or other language
       if (state.language == Languages.finnish) {
-        final List<Word> wordList = await _repository.findInlanguage(
+        final List<WordUnit> wordList = await _repository.findInlanguage(
             search,
             languages[state.language]?.language ?? '',
             languages[state.translation]?.language ?? '');
         state = state.copyWith(words: wordList);
       } else {
-        final List<Word> wordList = await _repository.findInlanguage(
+        final List<WordUnit> wordList = await _repository.findInlanguage(
             search,
             languages[state.translation]?.language ?? '',
             languages[state.translation]?.language ?? '');

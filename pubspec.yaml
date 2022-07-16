@@ -28,7 +28,7 @@ dependencies:
   auto_size_text: ^3.0.0
   cupertino_icons: ^1.0.5
   equatable: ^2.0.3
-  flushbar: ^1.10.4
+
   flutter_riverpod: ^1.0.4
   flutter_svg: ^1.1.1+1
   freezed_annotation: ^2.1.0

@@ -22,13 +22,13 @@ class DictNotifier extends StateNotifier<DictState> {
     try {
       // this if operator disides whethere button chosen finnish or other language
       if (state.language == Languages.finnish) {
-        final List<WordUnit> wordList = await _repository.findInlanguage(
+        final List<WordUnit> wordList = await _repository.find(
             search,
             languages[state.language]?.language ?? '',
             languages[state.translation]?.language ?? '');
         state = state.copyWith(words: wordList);
       } else {
-        final List<WordUnit> wordList = await _repository.findInlanguage(
+        final List<WordUnit> wordList = await _repository.find(
             search,
             languages[state.translation]?.language ?? '',
             languages[state.translation]?.language ?? '');

@@ -1,14 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'package:finn/localization/app_localization.dart';
 import 'package:finn/domain/models/language.dart';
 import 'package:finn/domain/models/languages.dart';
-import 'package:finn/application/dict_provider.dart';
+import 'package:finn/features/presentation/widgets/language_button.dart';
+import 'package:finn/localization/app_localization.dart';
 import 'package:finn/presentation/common/themes/light_theme.dart';
-import 'package:finn/presentation/pages/dictionary/widgets/language_button.dart';
-
-import '../../../../shared/providers.dart';
+import 'package:finn/shared/providers.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class LanguageButtonsRow extends StatelessWidget {
   const LanguageButtonsRow({
@@ -32,11 +29,11 @@ class LanguageButtonsRow extends StatelessWidget {
                 onTap: () {
                   ref
                       .read(dictProvider.notifier)
-                      .languageSearchUpdate(Languages.finnish);
+                      .languageSearchUpdate(LanguageType.finnish);
                   ref.read(dictProvider.notifier).resetSearchField();
                 },
                 language: state.language,
-                buttonLanguage: Languages.finnish,
+                buttonLanguage: LanguageType.finnish,
               ),
               LanguageButton(
                 label:
@@ -46,11 +43,11 @@ class LanguageButtonsRow extends StatelessWidget {
                 onTap: () {
                   ref
                       .read(dictProvider.notifier)
-                      .languageSearchUpdate(Languages.english);
+                      .languageSearchUpdate(LanguageType.english);
                   ref.read(dictProvider.notifier).resetSearchField();
                 },
                 language: state.language,
-                buttonLanguage: Languages.english,
+                buttonLanguage: LanguageType.english,
               ),
             ],
           ),

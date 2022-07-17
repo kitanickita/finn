@@ -1,4 +1,4 @@
-import 'package:finn/presentation/pages/dictionary/dictionary.dart';
+import 'package:finn/features/presentation/dictionary.dart';
 import 'package:finn/presentation/pages/word_info/word_info.dart';
 import 'package:flutter/material.dart';
 

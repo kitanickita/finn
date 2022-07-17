@@ -1,15 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:finn/domain/models/languages.dart';
+import 'package:finn/presentation/common/themes/light_theme.dart';
+import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'package:finn/domain/models/languages.dart';
-import 'package:finn/application/dict_provider.dart';
-import 'package:finn/presentation/common/size_config.dart';
-import 'package:finn/presentation/common/themes/light_theme.dart';
 import 'package:substring_highlight/substring_highlight.dart';
-
-import '../../../../shared/providers.dart';
-import '../../../common/widgets/highlight_text.dart';
 
 class DictList extends StatelessWidget {
   const DictList({
@@ -68,7 +63,7 @@ class DictList extends StatelessWidget {
                                           padding: EdgeInsets.only(
                                               left: blockSizeHorizontal * 3),
                                           child: state.language ==
-                                                  Languages.finnish
+                                                  LanguageType.finnish
                                               ? SubstringHighlight(
                                                   text: word.finnish,
                                                   term: state.search,
@@ -95,7 +90,7 @@ class DictList extends StatelessWidget {
                                           padding: EdgeInsets.only(
                                               left: blockSizeHorizontal * 3),
                                           child: state.language !=
-                                                  Languages.finnish
+                                                  LanguageType.finnish
                                               ? SubstringHighlight(
                                                   text: word.translation,
                                                   term: state.search,

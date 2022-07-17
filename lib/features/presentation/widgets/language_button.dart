@@ -7,8 +7,8 @@ class LanguageButton extends StatelessWidget {
   final Color fromColor;
   final Color toColor;
   final VoidCallback onTap;
-  final Languages language;
-  final Languages buttonLanguage;
+  final LanguageType language;
+  final LanguageType buttonLanguage;
   const LanguageButton({
     required this.label,
     required this.fromColor,

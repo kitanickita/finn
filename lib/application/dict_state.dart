@@ -4,20 +4,20 @@ import 'package:flutter/foundation.dart';
 
 class DictState {
   final List<WordUnit> words;
-  final Languages language;
-  final Languages translation;
+  final LanguageType language;
+  final LanguageType translation;
   final String search;
   DictState({
     this.words = const [],
-    this.language = Languages.finnish,
-    this.translation = Languages.english,
+    this.language = LanguageType.finnish,
+    this.translation = LanguageType.english,
     this.search = '',
   });
 
   DictState copyWith({
     List<WordUnit>? words,
-    Languages? language,
-    Languages? translation,
+    LanguageType? language,
+    LanguageType? translation,
     String? search,
   }) {
     return DictState(

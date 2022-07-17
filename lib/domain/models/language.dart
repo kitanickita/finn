@@ -27,13 +27,15 @@ class Language extends Equatable {
   List<Object> get props => [language, shortName, flag];
 }
 
-const Map<Languages, Language> languages = {
-  Languages.english:
+const Map<LanguageType, Language> languages = {
+  LanguageType.english:
       Language(language: 'english', shortName: 'EN', flag: '🇬🇧'),
-  Languages.russian:
+  LanguageType.russian:
       Language(language: 'russian', shortName: 'RU', flag: '🇷🇺'),
-  Languages.finnish:
+  LanguageType.finnish:
       Language(language: 'finnish', shortName: 'FI', flag: '🇫🇮'),
-  Languages.german: Language(language: 'german', shortName: 'DE', flag: '🇩🇪'),
-  Languages.french: Language(language: 'french', shortName: 'FR', flag: '🇫🇷'),
+  LanguageType.german:
+      Language(language: 'german', shortName: 'DE', flag: '🇩🇪'),
+  LanguageType.french:
+      Language(language: 'french', shortName: 'FR', flag: '🇫🇷'),
 };

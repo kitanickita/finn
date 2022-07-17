@@ -15,18 +15,18 @@ class LanguageDropdownMenu extends StatefulWidget {
 }
 
 class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
-  final List<Languages> languagePicker = [
-    Languages.english,
-    Languages.french,
-    Languages.german,
-    Languages.russian
+  final List<LanguageType> languagePicker = [
+    LanguageType.english,
+    LanguageType.french,
+    LanguageType.german,
+    LanguageType.russian
   ];
   @override
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, ref, child) {
         final state = ref.read(dictProvider);
-        return DropdownButton<Languages>(
+        return DropdownButton<LanguageType>(
           hint: Text(
               "${_getFlag(state.translation)} ${context.localize(_getLanguage(state.translation))}"),
           items: [
@@ -47,11 +47,11 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
     );
   }
 
-  String _getFlag(Languages translation) {
+  String _getFlag(LanguageType translation) {
     return languages[translation]?.flag ?? '';
   }
 
-  String _getLanguage(Languages translation) {
+  String _getLanguage(LanguageType translation) {
     return languages[translation]?.language ?? '';
   }
 }

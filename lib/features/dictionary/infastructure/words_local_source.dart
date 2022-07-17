@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:finn/domain/models/word_unit.dart';
-import 'package:finn/infrastructure/dtos/word_unit_dto.dart';
+import 'package:finn/features/dictionary/domain/word_unit.dart';
+import 'package:finn/features/dictionary/infrastructure/dtos/word_unit_dto.dart';
 import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';

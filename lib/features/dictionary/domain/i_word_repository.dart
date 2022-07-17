@@ -1,4 +1,4 @@
-import 'package:finn/domain/models/word_unit.dart';
+import 'package:finn/features/dictionary/domain/word_unit.dart';
 
 abstract class IWordRepository {
   Future<List<WordUnit>> find(

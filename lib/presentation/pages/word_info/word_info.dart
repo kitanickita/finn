@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:finn/domain/models/word_unit.dart';
-import 'package:finn/presentation/common/constants/icons.dart';
+import 'package:finn/features/dictionary/domain/word_unit.dart';
+import 'package:finn/common/constatnts/icons.dart';
 import 'package:flutter/material.dart';
 
-import 'package:finn/presentation/common/size_config.dart';
-import 'package:finn/presentation/common/themes/light_theme.dart';
+// import 'package:finn/presentation/common/size_config.dart';
+import 'package:finn/common/themes/light_theme.dart';
 
 // screenWidth = _mediaQueryData.size.width;
 //     screenHeight = _mediaQueryData.size.height;

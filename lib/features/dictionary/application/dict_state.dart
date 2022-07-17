@@ -1,5 +1,5 @@
-import 'package:finn/domain/models/word_unit.dart';
-import 'package:finn/domain/models/languages.dart';
+import 'package:finn/features/dictionary/domain/word_unit.dart';
+import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:flutter/foundation.dart';
 
 class DictState {

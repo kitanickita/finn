@@ -1,8 +1,8 @@
 import 'dart:ffi';
 
 import 'package:finn/features/target_language/infrastructure/abstract_target_language_storage.dart';
-import 'package:finn/domain/models/language.dart';
-import 'package:finn/domain/models/languages.dart';
+import 'package:finn/features/dictionary/domain/language.dart';
+import 'package:finn/features/dictionary/domain/languages.dart';
 
 class TargetLanguageRepository {
   final AbstractTargetLanguageStorage _storage;

@@ -1,4 +1,4 @@
-import 'package:finn/domain/models/languages.dart';
+import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:flutter/material.dart';
 
 class LanguageButton extends StatelessWidget {

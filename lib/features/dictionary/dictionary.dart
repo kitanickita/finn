@@ -1,8 +1,8 @@
-import 'package:finn/features/presentation/widgets/dict_list.dart';
-import 'package:finn/features/presentation/widgets/language_buttons_row.dart';
-import 'package:finn/features/presentation/widgets/language_dropdown_menu.dart';
+import 'package:finn/features/dictionary/widgets/dict_list.dart';
+import 'package:finn/features/dictionary/widgets/language_buttons_row.dart';
+import 'package:finn/features/dictionary/widgets/language_dropdown_menu.dart';
 import 'package:finn/features/presentation/widgets/search_field.dart';
-import 'package:finn/presentation/common/constants/icons.dart';
+import 'package:finn/common/constatnts/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -1,6 +1,6 @@
-import 'package:finn/features/presentation/dictionary.dart';
+import 'package:finn/common/themes/light_theme.dart';
+import 'package:finn/features/dictionary/dictionary.dart';
 import 'package:finn/localization/localization_delegate.dart';
-import 'package:finn/presentation/common/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

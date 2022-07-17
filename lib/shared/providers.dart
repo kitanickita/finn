@@ -1,9 +1,9 @@
 //  Create repository provider
-import 'package:finn/application/dict_provider.dart';
-import 'package:finn/application/dict_state.dart';
-import 'package:finn/domain/i_word_repository.dart';
-import 'package:finn/infrastructure/word_repository.dart';
-import 'package:finn/infrastructure/words_local_source.dart';
+import 'package:finn/features/dictionary/application/dict_provider.dart';
+import 'package:finn/features/dictionary/application/dict_state.dart';
+import 'package:finn/features/dictionary/domain/i_word_repository.dart';
+import 'package:finn/features/dictionary/infrastructure/word_repository.dart';
+import 'package:finn/features/dictionary/infastructure/words_local_source.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final dictRepository = Provider<IWordRepository>(

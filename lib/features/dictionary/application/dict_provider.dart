@@ -1,8 +1,8 @@
-import 'package:finn/application/dict_state.dart';
-import 'package:finn/domain/i_word_repository.dart';
-import 'package:finn/domain/models/language.dart';
-import 'package:finn/domain/models/languages.dart';
-import 'package:finn/domain/models/word_unit.dart';
+import 'package:finn/features/dictionary/application/dict_state.dart';
+import 'package:finn/features/dictionary/domain/i_word_repository.dart';
+import 'package:finn/features/dictionary/domain/language.dart';
+import 'package:finn/features/dictionary/domain/languages.dart';
+import 'package:finn/features/dictionary/domain/word_unit.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class DictNotifier extends StateNotifier<DictState> {

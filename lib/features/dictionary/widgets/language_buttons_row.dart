@@ -1,8 +1,8 @@
-import 'package:finn/domain/models/language.dart';
-import 'package:finn/domain/models/languages.dart';
-import 'package:finn/features/presentation/widgets/language_button.dart';
+import 'package:finn/common/themes/light_theme.dart';
+import 'package:finn/features/dictionary/domain/language.dart';
+import 'package:finn/features/dictionary/domain/languages.dart';
+import 'package:finn/features/dictionary/widgets/language_button.dart';
 import 'package:finn/localization/app_localization.dart';
-import 'package:finn/presentation/common/themes/light_theme.dart';
 import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

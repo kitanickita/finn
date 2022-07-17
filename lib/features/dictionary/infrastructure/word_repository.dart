@@ -1,6 +1,6 @@
-import 'package:finn/domain/i_word_repository.dart';
-import 'package:finn/domain/models/word_unit.dart';
-import 'package:finn/infrastructure/words_local_source.dart';
+import 'package:finn/features/dictionary/domain/i_word_repository.dart';
+import 'package:finn/features/dictionary/domain/word_unit.dart';
+import 'package:finn/features/dictionary/infastructure/words_local_source.dart';
 
 class WordRepository implements IWordRepository {
   final WordsLocalSource _localSource;

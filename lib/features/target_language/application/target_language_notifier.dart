@@ -1,4 +1,4 @@
-import 'package:finn/domain/models/languages.dart';
+import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/features/target_language/infrastructure/target_language_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -37,6 +37,7 @@ dependencies:
   sqflite: ^2.0.3
   json_annotation: ^4.6.0
   shared_preferences: ^2.0.15
+  flutter_lints: ^2.0.1
 
 dev_dependencies:
   flutter_test:

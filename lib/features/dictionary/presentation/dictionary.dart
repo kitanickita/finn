@@ -1,12 +1,13 @@
-import 'package:finn/features/dictionary/widgets/dict_list.dart';
-import 'package:finn/features/dictionary/widgets/language_buttons_row.dart';
-import 'package:finn/features/dictionary/widgets/language_dropdown_menu.dart';
-import 'package:finn/features/presentation/widgets/search_field.dart';
 import 'package:finn/common/constatnts/icons.dart';
+import 'package:finn/features/dictionary/presentation/widgets/dict_list.dart';
+import 'package:finn/features/dictionary/presentation/widgets/language_buttons_row.dart';
+import 'package:finn/features/dictionary/presentation/widgets/language_dropdown_menu.dart';
+import 'package:finn/features/dictionary/presentation/widgets/search_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class Dictionary extends ConsumerWidget {
+  @override
   Widget build(BuildContext context, WidgetRef ref) {
     final double blockSizeVertical = MediaQuery.of(context).size.height / 100;
     final double blockSizeHorizontal = MediaQuery.of(context).size.width / 100;

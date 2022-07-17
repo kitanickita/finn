@@ -1,5 +1,5 @@
 import 'package:finn/common/themes/light_theme.dart';
-import 'package:finn/features/dictionary/dictionary.dart';
+import 'package:finn/features/dictionary/presentation/dictionary.dart';
 import 'package:finn/localization/localization_delegate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

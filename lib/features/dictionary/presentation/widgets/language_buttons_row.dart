@@ -1,7 +1,7 @@
 import 'package:finn/common/themes/light_theme.dart';
 import 'package:finn/features/dictionary/domain/language.dart';
 import 'package:finn/features/dictionary/domain/languages.dart';
-import 'package:finn/features/dictionary/widgets/language_button.dart';
+import 'package:finn/features/dictionary/presentation/widgets/language_button.dart';
 import 'package:finn/localization/app_localization.dart';
 import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';

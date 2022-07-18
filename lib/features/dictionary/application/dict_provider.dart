@@ -1,6 +1,5 @@
 import 'package:finn/features/dictionary/application/dict_state.dart';
 import 'package:finn/features/dictionary/domain/i_word_repository.dart';
-import 'package:finn/features/dictionary/domain/language.dart';
 import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/features/dictionary/domain/word_unit.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,15 +22,14 @@ class DictNotifier extends StateNotifier<DictState> {
       // this if operator disides whethere button chosen finnish or other language
       if (state.language == LanguageType.finnish) {
         final List<WordUnit> wordList = await _repository.find(
-            search,
-            languages[state.language]?.language ?? '',
-            languages[state.translation]?.language ?? '');
+            search, state.language.name, state.translation.name);
         state = state.copyWith(words: wordList);
       } else {
         final List<WordUnit> wordList = await _repository.find(
-            search,
-            languages[state.translation]?.language ?? '',
-            languages[state.translation]?.language ?? '');
+          search,
+          state.translation.name,
+          state.translation.name,
+        );
         state = state.copyWith(words: wordList);
       }
     } catch (e) {

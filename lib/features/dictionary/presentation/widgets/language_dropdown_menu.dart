@@ -1,4 +1,3 @@
-import 'package:finn/features/dictionary/domain/language.dart';
 import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/localization/app_localization.dart';
 import 'package:finn/shared/providers.dart';
@@ -28,14 +27,14 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
         final state = ref.read(dictProvider);
         return DropdownButton<LanguageType>(
           hint: Text(
-              "${_getFlag(state.translation)} ${context.localize(_getLanguage(state.translation))}"),
+              "${state.translation.flag} ${context.localize(state.translation.shortName)}"),
           items: [
             ...List.generate(
               languagePicker.length,
               (index) => DropdownMenuItem(
                 value: languagePicker[index],
                 child: Text(
-                    "${_getFlag(state.translation)} ${context.localize(_getLanguage(languagePicker[index]))}"),
+                    "${state.translation.flag} ${context.localize(languagePicker[index].shortName)}"),
               ),
             ),
           ],
@@ -45,13 +44,5 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
         );
       },
     );
-  }
-
-  String _getFlag(LanguageType translation) {
-    return languages[translation]?.flag ?? '';
-  }
-
-  String _getLanguage(LanguageType translation) {
-    return languages[translation]?.language ?? '';
   }
 }

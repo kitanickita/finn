@@ -8,7 +8,10 @@ enum LanguageType {
   final String shortName;
   final String flag;
 
-  const LanguageType(this.flag, this.shortName);
+  const LanguageType(
+    this.shortName,
+    this.flag,
+  );
 
   /// Parse String to [LanguageType]
   ///

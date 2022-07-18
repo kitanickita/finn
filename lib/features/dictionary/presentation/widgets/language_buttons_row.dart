@@ -1,5 +1,4 @@
 import 'package:finn/common/themes/light_theme.dart';
-import 'package:finn/features/dictionary/domain/language.dart';
 import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/features/dictionary/presentation/widgets/language_button.dart';
 import 'package:finn/localization/app_localization.dart';
@@ -23,7 +22,8 @@ class LanguageButtonsRow extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LanguageButton(
-                label: '🇫🇮   ${context.localize('FI')} ',
+                label:
+                    '${LanguageType.finnish.flag}   ${context.localize(LanguageType.finnish.shortName)} ',
                 fromColor: kBlue,
                 toColor: kOrange,
                 onTap: () {
@@ -37,7 +37,7 @@ class LanguageButtonsRow extends StatelessWidget {
               ),
               LanguageButton(
                 label:
-                    '${languages[state.translation]?.flag ?? ''} ${context.localize(languages[state.translation]?.shortName ?? '')}',
+                    '${state.translation.flag} ${context.localize(state.translation.shortName)}',
                 fromColor: kOrange,
                 toColor: kBlue,
                 onTap: () {

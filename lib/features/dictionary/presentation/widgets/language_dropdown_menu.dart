@@ -24,7 +24,7 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, ref, child) {
-        final state = ref.read(dictProvider);
+        final state = ref.watch(dictProvider);
         return DropdownButton<LanguageType>(
           hint: Text(
               "${state.translation.flag} ${context.localize(state.translation.shortName)}"),
@@ -34,7 +34,7 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
               (index) => DropdownMenuItem(
                 value: languagePicker[index],
                 child: Text(
-                    "${state.translation.flag} ${context.localize(languagePicker[index].shortName)}"),
+                    "${languagePicker[index].flag} ${context.localize(languagePicker[index].shortName)}"),
               ),
             ),
           ],

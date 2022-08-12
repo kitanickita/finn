@@ -9,21 +9,17 @@ class WordUnitDTO with _$WordUnitDTO {
   const factory WordUnitDTO({
     @JsonKey(name: "id") required int id,
     @JsonKey(name: "finnish") required String finnish,
-    @JsonKey(name: "translation") required String translation,
-    @JsonKey(name: "english") required String english,
-    @JsonKey(name: "russian") required String russian,
+    required String translation,
     @JsonKey(name: 'chapter') required int chapter,
   }) = _WordUnitDTO;
 
-  factory WordUnitDTO.fromJson(Map<String, dynamic> json) =>
-      _$WordUnitDTOFromJson(json);
-  factory WordUnitDTO.toJson() => WordUnitDTO.toJson();
+  // factory WordUnitDTO.fromJson(Map<String, dynamic> json) =>
+  //     _$WordUnitDTOFromJson(json);
+  // factory WordUnitDTO.toJson() => WordUnitDTO.toJson();
   WordUnit toDomain() => WordUnit(
         id: id,
         finnish: finnish,
         translation: translation,
-        english: english,
-        russian: russian,
         chapter: chapter,
       );
 
@@ -32,8 +28,6 @@ class WordUnitDTO with _$WordUnitDTO {
       id: data['id'] ?? '',
       finnish: data['finnish'] ?? '',
       translation: data[translation] ?? '',
-      english: data['english'] ?? '',
-      russian: data['russian'] ?? '',
       chapter: data['chapter'] ?? '',
     );
   }

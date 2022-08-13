@@ -5,16 +5,25 @@ import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class LanguageDropdownMenu extends StatefulWidget {
+class LanguageDropdownMenu extends ConsumerStatefulWidget {
   const LanguageDropdownMenu({
     Key? key,
   }) : super(key: key);
 
   @override
-  _LanguageDropdownMenuState createState() => _LanguageDropdownMenuState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _LanguageDropdownMenuState();
 }
 
-class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
+class _LanguageDropdownMenuState extends ConsumerState<LanguageDropdownMenu> {
+  @override
+  void initState() {
+    super.initState();
+    Future.microtask(
+      () => ref.read(dictProvider.notifier).initTargetLanguage(),
+    );
+  }
+
   final List<LanguageType> languagePicker = [
     LanguageType.english,
     LanguageType.french,
@@ -41,6 +50,9 @@ class _LanguageDropdownMenuState extends State<LanguageDropdownMenu> {
           ],
           onChanged: (value) {
             ref.read(dictProvider.notifier).translationSearchUpdate(value);
+            ref
+                .read(targetLanguageStateNotifierProvider.notifier)
+                .setTargetLanguage(value!);
           },
         );
       },

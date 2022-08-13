@@ -3,7 +3,8 @@ enum LanguageType {
   english('EN', '🇬🇧'),
   russian('RU', '🇷🇺'),
   german('DE', '🇩🇪'),
-  french('FR', '🇫🇷');
+  french('FR', '🇫🇷'),
+  empty('', '');
 
   final String shortName;
   final String flag;
@@ -29,7 +30,7 @@ enum LanguageType {
       case 'french':
         return LanguageType.french;
       default:
-        throw Exception("Enum parsing gone wrong");
+        throw LanguageType.empty;
     }
   }
 }

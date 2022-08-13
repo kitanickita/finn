@@ -12,6 +12,7 @@ class TargetLanguageRepository {
   }
 
   Future<void> setTargetLaguage(LanguageType languageType) async {
-    await _storage.save(languageType.toString());
+    final language = languageType.name;
+    await _storage.save(languageType.name);
   }
 }

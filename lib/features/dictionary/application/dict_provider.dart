@@ -2,13 +2,22 @@ import 'package:finn/features/dictionary/application/dict_state.dart';
 import 'package:finn/features/dictionary/domain/i_word_repository.dart';
 import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/features/dictionary/domain/word_unit.dart';
+import 'package:finn/features/target_language/infrastructure/target_language_repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 class DictNotifier extends StateNotifier<DictState> {
   final IWordRepository _repository;
+  final TargetLanguageRepository _targetLanguageRepository;
 
-  DictNotifier(this._repository) : super(DictState());
+  DictNotifier(this._repository, this._targetLanguageRepository)
+      : super(DictState());
+
+  void initTargetLanguage() {
+    final languageType = _targetLanguageRepository.getTargetLanguage();
+    state = state.copyWith(
+      translation: _targetLanguageRepository.getTargetLanguage(),
+    );
+  }
 
   void resetSearchField() {
     final newState = state.copyWith(search: '');

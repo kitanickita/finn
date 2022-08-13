@@ -5,3 +5,8 @@ A Simple Finnish Dictionary based on "Suomen Mestari" books 1, 2. Can be used as
 ## Design
 
 I was inspired by this [Design](https://www.behance.net/gallery/34019906/hangeul-an-immersive-dictionary-app)
+
+
+### Playstore
+
+Link for application in google [playstore](https://play.google.com/store/apps/details?id=com.kitanickita.finn)

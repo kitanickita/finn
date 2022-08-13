@@ -3,6 +3,7 @@ import 'package:finn/features/dictionary/domain/i_word_repository.dart';
 import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/features/dictionary/domain/word_unit.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 class DictNotifier extends StateNotifier<DictState> {
   final IWordRepository _repository;

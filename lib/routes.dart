@@ -1,5 +1,4 @@
 import 'package:finn/features/dictionary/presentation/dictionary.dart';
-import 'package:finn/presentation/pages/word_info/word_info.dart';
 import 'package:flutter/material.dart';
 
 class RouteGenerator {
@@ -14,10 +13,7 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (context) => Dictionary(),
         );
-      case wordInfo:
-        return MaterialPageRoute(
-          builder: (context) => WordInfo(),
-        );
+
       default:
         throw const FormatException("Route not fount");
     }

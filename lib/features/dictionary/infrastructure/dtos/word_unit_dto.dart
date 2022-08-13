@@ -1,7 +1,6 @@
 import 'package:finn/features/dictionary/domain/word_unit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'word_unit_dto.freezed.dart';
-part 'word_unit_dto.g.dart';
 
 @freezed
 class WordUnitDTO with _$WordUnitDTO {

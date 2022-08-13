@@ -1,4 +1,5 @@
 import 'package:finn/features/dictionary/domain/languages.dart';
+import 'package:finn/features/target_language/shared/providers.dart';
 import 'package:finn/localization/app_localization.dart';
 import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';

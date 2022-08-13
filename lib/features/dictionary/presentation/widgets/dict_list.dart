@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/common/themes/light_theme.dart';
+import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

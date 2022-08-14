@@ -1,7 +1,7 @@
 import 'package:finn/common/themes/light_theme.dart';
-import 'package:finn/localization/app_localization.dart';
 import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SearchField extends ConsumerWidget {
@@ -29,7 +29,7 @@ class SearchField extends ConsumerWidget {
           ),
           fillColor: Theme.of(context).primaryColor,
           filled: true,
-          hintText: context.localize('search'),
+          hintText: AppLocalizations.of(context)?.search,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
             borderSide: const BorderSide(width: 0.8),

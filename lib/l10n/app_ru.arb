@@ -1,0 +1,46 @@
+{
+  "search": "Введите слово",
+  "@search": {
+    "description": "Hint for the search field."
+  },
+  "english": "английский",
+  "@english": {
+    "description": "English language."
+  },
+  "russian": "русский",
+  "@russian": {
+    "description": "Russian language."
+  },
+  "german": "немецкий",
+  "@german": {
+    "description": "German language."
+  },
+  "french": "французкий",
+  "@french": {
+    "description": "French language."
+  },
+  "finnish": "финский",
+  "@finnish": {
+    "description": "Finnish language."
+  },
+  "shortEnglish": "АНГ",
+  "@shortEnglish": {
+    "description": "Short representaion of English language."
+  },
+  "shortRussian": "РУС",
+  "@shortRussian": {
+    "description": "Short representaion of Russian language."
+  },
+  "shortGerman": "НЕМ",
+  "@shortGerman": {
+    "description": "Short representaion of German language."
+  },
+  "shortFrench": "ФРА",
+  "@shortFrench": {
+    "description": "Short representaion of French language."
+  },
+  "shortFinnish": "ФИН",
+  "@shortFinnish": {
+    "description": "Short representaion of Finnish language."
+  }
+}

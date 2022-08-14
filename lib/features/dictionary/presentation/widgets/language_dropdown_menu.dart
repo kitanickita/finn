@@ -1,6 +1,5 @@
 import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/features/target_language/shared/providers.dart';
-import 'package:finn/localization/app_localization.dart';
 import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -37,14 +36,14 @@ class _LanguageDropdownMenuState extends ConsumerState<LanguageDropdownMenu> {
         final state = ref.watch(dictProvider);
         return DropdownButton<LanguageType>(
           hint: Text(
-              "${state.translation.flag} ${context.localize(state.translation.shortName)}"),
+              "${state.translation.flag} ${LanguageType.getLocalizedShortName(state.translation, context)}"),
           items: [
             ...List.generate(
               languagePicker.length,
               (index) => DropdownMenuItem(
                 value: languagePicker[index],
                 child: Text(
-                    "${languagePicker[index].flag} ${context.localize(languagePicker[index].shortName)}"),
+                    "${languagePicker[index].flag} ${LanguageType.getLocalizedShortName(languagePicker[index], context)}"),
               ),
             ),
           ],

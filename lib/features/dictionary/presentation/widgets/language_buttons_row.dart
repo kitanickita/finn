@@ -1,9 +1,9 @@
 import 'package:finn/common/themes/light_theme.dart';
 import 'package:finn/features/dictionary/domain/languages.dart';
 import 'package:finn/features/dictionary/presentation/widgets/language_button.dart';
-import 'package:finn/localization/app_localization.dart';
 import 'package:finn/shared/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class LanguageButtonsRow extends StatelessWidget {
@@ -23,7 +23,7 @@ class LanguageButtonsRow extends StatelessWidget {
             children: [
               LanguageButton(
                 label:
-                    '${LanguageType.finnish.flag}   ${context.localize(LanguageType.finnish.shortName)} ',
+                    '${LanguageType.finnish.flag}   ${AppLocalizations.of(context)?.shortFinnish} ',
                 fromColor: kBlue,
                 toColor: kOrange,
                 onTap: () {
@@ -37,7 +37,7 @@ class LanguageButtonsRow extends StatelessWidget {
               ),
               LanguageButton(
                 label:
-                    '${state.translation.flag} ${context.localize(state.translation.shortName)}',
+                    '${state.translation.flag} ${LanguageType.getLocalizedShortName(state.translation, context)}',
                 fromColor: kOrange,
                 toColor: kBlue,
                 onTap: () {

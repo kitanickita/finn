@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 enum LanguageType {
   finnish('FI', '🇫🇮'),
   english('EN', '🇬🇧'),
@@ -31,6 +34,25 @@ enum LanguageType {
         return LanguageType.french;
       default:
         throw LanguageType.empty;
+    }
+  }
+
+  static String? getLocalizedShortName(
+      LanguageType languageType, BuildContext context) {
+    switch (languageType) {
+      case LanguageType.finnish:
+        return AppLocalizations.of(context)?.shortFinnish;
+
+      case LanguageType.english:
+        return AppLocalizations.of(context)?.shortEnglish;
+      case LanguageType.russian:
+        return AppLocalizations.of(context)?.shortRussian;
+      case LanguageType.german:
+        return AppLocalizations.of(context)?.shortGerman;
+      case LanguageType.french:
+        return AppLocalizations.of(context)?.shortFrench;
+      default:
+        return "";
     }
   }
 }

@@ -10,7 +10,7 @@ const kGray = Color(0xFF8A8A8A);
 const kWhite = Colors.white;
 
 final ThemeData lightTheme = ThemeData(
-  appBarTheme: AppBarTheme(backgroundColor: kWhite),
+  appBarTheme: const AppBarTheme(backgroundColor: kWhite),
   primaryColor: Colors.white,
   scaffoldBackgroundColor: kLightBlue,
 

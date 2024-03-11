@@ -1,0 +1,6 @@
+project.ext {
+    devSigningReleaseStoreFile = file('keystore')
+    devSigningReleaseStorePassword = 'a3?^9kkjg?j?&fYgX5695\\gt'
+    devSigningReleaseKeyAlias = 'upload'
+    devSigningReleaseKeyPassword = 'a3?^9kkjg?j?&fYgX5695\\gt'
+}

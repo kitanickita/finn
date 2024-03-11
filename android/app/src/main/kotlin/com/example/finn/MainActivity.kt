@@ -1,4 +1,4 @@
-package com.example.finn
+package com.kitanickita.finn
 
 import io.flutter.embedding.android.FlutterActivity
 
